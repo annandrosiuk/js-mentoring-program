@@ -1,0 +1,19 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "module": "amd",
+    "moduleResolution": "node",
+    "target": "es6",
+    "outFile": "./dist/index.js",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "baseUrl": ".",
+    "pretty": true,
+    "removeComments": true
+  },
+  "exclude": [
+    "node_modules",
+    "src/**/*.spec.ts",
+    "./**/**.**.ts"
+  ]
+}
