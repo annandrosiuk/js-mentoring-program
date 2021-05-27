@@ -4,16 +4,16 @@
     "module": "amd",
     "moduleResolution": "node",
     "target": "es6",
-    "outFile": "./dist/index.js",
-    "outDir": "./dist",
+    "outFile": "dist/index.js",
+    "outDir": "dist",
     "rootDir": "./src",
-    "baseUrl": ".",
+    "baseUrl": "./",
     "pretty": true,
-    "removeComments": true
+    "removeComments": true,
+    "allowSyntheticDefaultImports": true
   },
   "exclude": [
     "node_modules",
-    "src/**/*.spec.ts",
-    "./**/**.**.ts"
+    "src/**/*.spec.ts"
   ]
 }

@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "tsc -w & nodemon dist",
-    "lint": "eslint src & prettier src --write",
+    "lint": "eslint src --quiet & prettier src --check",
     "test": "jest"
   },
   "repository": {
