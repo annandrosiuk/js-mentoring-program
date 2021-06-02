@@ -32,5 +32,6 @@ module.exports = {
     'no-plusplus': 'off',
     'no-undef': 'off',
     '@typescript-eslint/no-var-requires': 'off',
+    'import/no-unresolved': 'off',
   },
 };

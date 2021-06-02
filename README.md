@@ -38,3 +38,11 @@ Run ESLint
 ```sh
 npm run lint
 ```
+
+In Back-end project directories you can:
+
+Run Documentation generator, then you can find `doc` folder in `dist`
+
+```sh
+npm run doc
+```

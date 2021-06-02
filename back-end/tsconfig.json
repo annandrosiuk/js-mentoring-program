@@ -1,19 +1,41 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "module": "amd",
-    "moduleResolution": "node",
-    "target": "es6",
-    "outFile": "dist/index.js",
-    "outDir": "dist",
+    "target": "ES5",
+    "module": "commonjs",
     "rootDir": "./src",
+    "outDir": "dist",
+    "removeComments": true,
+    "strict": true,
+    "moduleResolution": "node",
     "baseUrl": "./",
     "pretty": true,
-    "removeComments": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@enums": ["src/enums"],
+      "@interfaces": ["src/interfaces"],
+      "@types": ["src/types"]
+    }
   },
   "exclude": [
     "node_modules",
+    "./**/**.**.ts",
     "src/**/*.spec.ts"
-  ]
+  ],
+  "typedocOptions": {
+    "entryPoints": [
+      "src/enums/index.ts",
+      "src/interfaces/index.ts",
+      "src/types/index.ts"
+    ],
+    "out": "dist/docs",
+    "exclude": [
+      "../node_modules",
+      "src/**/*.spec.ts",
+      "./jest.config.ts"
+    ],
+    "highlightTheme": "light-plus",
+    "name": "API Documentation",
+    "hideGenerator": true
+  },
 }
