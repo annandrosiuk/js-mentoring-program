@@ -8,6 +8,9 @@ export function startNewChallenge(
   challengeDuration = 30,
   numberOfAchievements = challengeDuration / 6
 ): Challenge {
+  const isInvalidValue = !Array.isArray(tasks) || !tasks.length || !Array.isArray(achievementsList);
+  if (isInvalidValue) return {} as Challenge;
+
   const randomTasksOrder = getRandomOrders(challengeDuration);
   const tasksOrder: Record<string, Task> = randomTasksOrder.reduce(
     (acc, current: number, index: number) => {

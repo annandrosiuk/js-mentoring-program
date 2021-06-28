@@ -1,5 +1,5 @@
 import { startNewChallenge } from '@services';
-import { achievements, tasks } from './mock/data';
+import { achievements, tasks, challenges } from './mock/data';
 
 describe('startNewChallenge', () => {
   it('Should return new challenge with default challengeDuration and numberOfAchievements', () => {
@@ -14,11 +14,14 @@ describe('startNewChallenge', () => {
   });
 
   it('Should return new challenge with randomly picket tasks', () => {
-    const result1 = startNewChallenge(tasks, achievements).tasksOrder;
-    const result2 = startNewChallenge(tasks, achievements).tasksOrder;
-    const expected1 = result1[0].description === result2[0].description;
-    const expected2 = result1[10].description === result2[15].description;
-    expect(expected1).toBeFalsy();
-    expect(expected2).toBeFalsy();
+    const result = startNewChallenge(tasks, achievements).tasksOrder[0];
+    const mockedTasksOrder = challenges[0].tasksOrder[0];
+    const expected = result === mockedTasksOrder;
+    expect(expected).toBeFalsy();
+  });
+
+  it('should return empty object, if achievements array is empty', () => {
+    const createdChallenge = startNewChallenge([], [], 0, 0);
+    expect(createdChallenge).toEqual({});
   });
 });

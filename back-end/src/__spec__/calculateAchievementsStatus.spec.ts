@@ -4,7 +4,7 @@ import { calculateAchievementsStatus } from '@services';
 import { achievements } from './mock/data';
 
 describe('calculateAchievementsStatus', () => {
-  it('Should returns achievements status for the challenge by its achievements list and tasks status', () => {
+  it('should return proper achievements status map for the challenge', () => {
     const tasksStatus: Status = {
       state: StatusState.SUCCESS,
       updated: new Date(),
@@ -15,6 +15,18 @@ describe('calculateAchievementsStatus', () => {
     );
     
     expect(result.size).toBe(achievements.length);
+  });
+
+  it('Should returns achievements status for the challenge by its achievements list and tasks status', () => {
+    const tasksStatus: Status = {
+      state: StatusState.SUCCESS,
+      updated: new Date(),
+    };
+    const result = calculateAchievementsStatus(
+      achievements,
+      tasksStatus
+    );
+
     result.forEach((value) => {
       expect(value.state).toBe(StatusState.SUCCESS);
       expect(value.updated.getDay()).toBe(new Date().getDay());

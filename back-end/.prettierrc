@@ -5,5 +5,5 @@
     "tabWidth": 2,
     "semi": true,
     "trailingComma": "es5",
-    "parser": "flow"
+    "parser": "typescript"
 }

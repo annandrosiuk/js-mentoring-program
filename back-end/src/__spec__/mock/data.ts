@@ -10,7 +10,7 @@ export const tasks: Task[] = [
   { id: '6', description: 'Call your family' },
   { id: '7', description: 'Eat your breakfast in bed' },
   { id: '8', description: 'Spend 20 minutes reading poetry out loud' },
-  { id: '9', description: 'Write down at least five things you feel gratitude for' },
+  { id: '9', description: 'Write down at least 5 things you feel gratitude for' },
   { id: '10', description: 'Find a song you liked in adolescence and sing it like in karaoke' },
   { id: '11', description: 'Send a short letter to future You in one year using futureme.org' },
   { id: '12', description: 'Watch an old classic movie of your favorite genre' },
@@ -19,13 +19,13 @@ export const tasks: Task[] = [
   { id: '15', description: 'Send 10$ to any charity organization you trust' },
   { id: '16', description: 'Find out a new podcast and listen to a first episode' },
   { id: '17', description: 'Quit social media for at least one day' },
-  { id: '18', description: 'Write down at least five things you are good at' },
+  { id: '18', description: 'Write down at least 5 things you are good at' },
   { id: '19', description: 'Take a cold shower' },
   { id: '20', description: 'Clean up your laptop and mobile screens' },
   { id: '21', description: 'Pick up at least ten stuff you don\'t use and donate/sell/recycle them' },
   { id: '22', description: 'Smile to a stranger' },
   { id: '23', description: 'Taste something you\'ve never tried before' },
-  { id: '24', description: 'Write down your five best guesses about the future and send them to future You' },
+  { id: '24', description: 'Write down your 5 best guesses about the future and send them to future You' },
   { id: '25', description: 'Order take away meal from your favorite restaurant' },
   { id: '26', description: 'Find out more about an artist you know the name but haven\'t seen their work' },
   { id: '27', description: 'Play drawasaurus.org with your friends online' },
@@ -48,11 +48,11 @@ export const achievements: Achievement[] = [
       }
     ] 
   },
-  { id: '2', description: 'Complete five tasks before 8:00 AM', icon: '' , 
+  { id: '2', description: 'Complete 5 tasks before 8:00 AM', icon: '' , 
     tasks: [
       {
         id: '1', 
-        description: 'Complete five tasks before 8:00 AM',
+        description: 'Complete 5 tasks before 8:00 AM',
         status: {
           state: StatusState.PENDING,
           updated: new Date('June 18, 2021 00:00:00'),
@@ -133,7 +133,7 @@ export const actualAchievements: ActualAchievement[] = [
     },
   },
   {
-    description: 'Complete five tasks before 8:00 AM',
+    description: 'Complete 5 tasks before 8:00 AM',
     id: '2',
     image: '',
     status: {
