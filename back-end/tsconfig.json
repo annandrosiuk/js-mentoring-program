@@ -1,12 +1,12 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "target": "ES5",
+    "target": "es2020",
     "module": "commonjs",
-    "rootDir": "./src",
+    "rootDir": ".",
     "outDir": "dist",
     "removeComments": true,
-    "strict": true,
+    "strict": false,
     "moduleResolution": "node",
     "baseUrl": "./",
     "pretty": true,
@@ -14,13 +14,13 @@
     "paths": {
       "@enums": ["src/enums"],
       "@interfaces": ["src/interfaces"],
-      "@types": ["src/types"]
+      "@services": ["src/services"],
+      "@types": ["src/typess"],
+      "@utils": ["src/utils"],
     }
   },
   "exclude": [
     "node_modules",
-    "./**/**.**.ts",
-    "src/**/*.spec.ts"
   ],
   "typedocOptions": {
     "entryPoints": [
