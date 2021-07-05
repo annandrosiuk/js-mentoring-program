@@ -1,5 +1,5 @@
-import { ONE_DAY } from '@enums';
-import { Challenge } from '@interfaces';
+import { ONE_DAY } from '../enums';
+import { Challenge } from '../interfaces';
 
 export const getCurrentChallange = (challenges: Challenge[], challengeId: string): Challenge => {
   return challenges.find((challenge) => challenge.id === challengeId);

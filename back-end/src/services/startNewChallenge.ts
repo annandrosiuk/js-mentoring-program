@@ -1,6 +1,6 @@
-import { ChallengeState, REQUIRED_ACHIEVEMENTS, StatusState } from '@enums';
-import { Achievement, Challenge, Status, Task } from '@interfaces';
-import { getRandomOrders } from '@utils';
+import { ChallengeState, REQUIRED_ACHIEVEMENTS, StatusState } from '../enums';
+import { Achievement, Challenge, Status, Task } from '../interfaces';
+import { getRandomOrders } from '../utils';
 
 export function startNewChallenge(
   tasks: Task[],

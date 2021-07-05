@@ -1,5 +1,5 @@
-import { Challenge, ActualAchievement, Achievement } from '@interfaces';
-import { getCurrentChallange } from '@utils';
+import { Challenge, ActualAchievement, Achievement } from '../interfaces';
+import { getCurrentChallange } from '../utils';
 
 export const getActualAchievements = (
   challengeId: string,

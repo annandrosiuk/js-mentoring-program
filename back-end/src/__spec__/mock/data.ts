@@ -1,5 +1,5 @@
-import { ChallengeState, StatusState } from '@enums';
-import { Achievement, ActualAchievement, Challenge, Status, Task } from '@interfaces';
+import { ChallengeState, StatusState } from '../../enums';
+import { Achievement, ActualAchievement, Challenge, Status, Task } from '../../interfaces';
 
 export const tasks: Task[] = [
   { id: '1', description: 'Go to bed before 11:00 PM' },
@@ -223,5 +223,5 @@ export const challenges: Challenge[] = [{
   achievementsStatus,
   id: '1',
   state: ChallengeState.IN_PROGRESS,
-  startDate: new Date('June 4, 2021 00:00:00'),
+  startDate: new Date('June 24, 2021 00:00:00'),
 }];

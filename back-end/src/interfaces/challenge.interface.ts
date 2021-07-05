@@ -1,5 +1,5 @@
-import { ChallengeState } from '@enums';
-import { Task } from '@interfaces';
+import { ChallengeState } from '../enums';
+import { Task } from '../interfaces';
 import { Achievement } from './achievement.interface';
 import { Status } from './status.interface';
 
