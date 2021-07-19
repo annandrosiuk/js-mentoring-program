@@ -1,4 +1,4 @@
-import { StatusState } from '@enums';
+import { StatusState } from '../enums';
 
 export interface Status {
   state: StatusState;

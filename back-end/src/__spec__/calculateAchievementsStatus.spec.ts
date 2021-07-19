@@ -1,14 +1,9 @@
-import { StatusState } from '@enums';
-import { Status } from '@interfaces';
-import { calculateAchievementsStatus } from '@services';
-import { achievements } from './mock/data';
+import { StatusState } from '../enums';
+import { calculateAchievementsStatus } from '../services';
+import { achievements, tasksStatus } from './mock/data';
 
 describe('calculateAchievementsStatus', () => {
   it('should return proper achievements status map for the challenge', () => {
-    const tasksStatus: Status = {
-      state: StatusState.SUCCESS,
-      updated: new Date(),
-    };
     const result = calculateAchievementsStatus(
       achievements,
       tasksStatus
@@ -18,10 +13,6 @@ describe('calculateAchievementsStatus', () => {
   });
 
   it('Should returns achievements status for the challenge by its achievements list and tasks status', () => {
-    const tasksStatus: Status = {
-      state: StatusState.SUCCESS,
-      updated: new Date(),
-    };
     const result = calculateAchievementsStatus(
       achievements,
       tasksStatus

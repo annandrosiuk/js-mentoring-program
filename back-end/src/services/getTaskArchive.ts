@@ -1,5 +1,5 @@
-import { Challenge, ArchiveItem, TaskForToday, Achievement } from '@interfaces';
-import { getCurrentChallange } from '@utils';
+import { Challenge, ArchiveItem, TaskForToday, Achievement } from '../interfaces';
+import { getCurrentChallange } from '../utils';
 
 export const getTaskArchive = (challengeId: string, challengesList: Challenge[]): ArchiveItem[] => {
   const currentChallenge: Challenge = getCurrentChallange(challengesList, challengeId);

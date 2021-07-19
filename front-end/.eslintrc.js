@@ -20,6 +20,7 @@ module.exports = {
     'func-names': 'off',
     'import/extensions': 0,
     'no-unused-expressions': 'error',
+    "@typescript-eslint/no-explicit-any": "off",
     'object-shorthand': 'off',
     'class-methods-use-this': 'off',
     'no-param-reassign': 'off',

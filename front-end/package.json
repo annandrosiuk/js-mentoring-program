@@ -61,5 +61,9 @@
       "npm run lint",
       "git add .*"
     ]
+  },
+  "dependencies": {
+    "socket.io": "^4.1.2",
+    "socket.io-client": "^4.1.2"
   }
 }

@@ -11,6 +11,7 @@
     "baseUrl": "./",
     "pretty": true,
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "paths": {
       "@enums": ["src/enums"],
       "@interfaces": ["src/interfaces"],

@@ -1,4 +1,4 @@
-import { Status, ArchiveItem } from '@interfaces';
+import { Status, ArchiveItem } from '../interfaces';
 import { TaskForToday } from './task.interface';
 
 export interface Achievement {
