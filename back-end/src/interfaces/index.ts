@@ -5,3 +5,4 @@ export * from './achievement.interface';
 export * from './challenge.interface';
 export * from './status.interface';
 export * from './task.interface';
+export * from './user.interface';

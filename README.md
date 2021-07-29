@@ -15,7 +15,7 @@ npm >= v5.*
 In both project directories you can:
 
 Run the app in the development mode.
-Open [http://localhost:3000] for front-end and [http://localhost:8080] for back-end.
+Open [http://localhost:3000] for front-end and [http://localhost:5000] for back-end.
 
 ```sh
 npm run start

@@ -3,9 +3,9 @@ import { Response } from 'express';
 export function errorHandler(
   message: string,
   response: Response,
+  code = 500,
   // eslint-disable-next-line @typescript-eslint/ban-types
-  error: Object | string,
-  code = 500
+  error?: Object | string,
 ): void {
   if (error) {
     console.error(error);

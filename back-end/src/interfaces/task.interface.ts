@@ -1,7 +1,7 @@
 import { Status } from '../interfaces';
 
 export interface Task {
-  id: string;
+  _id?: string;
   description: string;
 }
 

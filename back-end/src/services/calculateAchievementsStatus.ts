@@ -1,13 +1,22 @@
+import socketIo from 'socket.io';
+import { Achievement, Status } from '../interfaces';
 import { StatusState } from '../enums';
-import { Status, Achievement } from '@interfaces';
+import ChallengeModel, { ChallengeDocument } from '../models/challenge.model';
 
-export const calculateAchievementsStatus = (
-  achievementsList: Achievement[],
-  tasksStatus: Record<string, Status>
-): Map<string, Status> => {
-  const mockAchievementsList = achievementsList.reduce((accumulator, current: Achievement) => {
-    accumulator.set(current.id, {
-      [current.id]: {
+export const calculateAchievementsStatus = async (
+  challengeId: string,
+  io: socketIo.Server
+): Promise<Map<string, Status>> => {
+  const challenge: ChallengeDocument = await ChallengeModel.findById(challengeId);
+
+  if (!challenge) {
+    return null;
+  }
+
+  // Random check completed
+  const mockAchievementsList = challenge.achievements.reduce((accumulator, current: Achievement) => {
+    accumulator.set(current._id, {
+      [current._id]: {
         state: Math.random() <= 0.5 ? StatusState.SUCCESS : StatusState.FAILURE,
         updated: new Date(),
       },
@@ -16,13 +25,15 @@ export const calculateAchievementsStatus = (
     return accumulator;
   }, new Map());
 
-  // TODO: Use actual achievementsList instead of mock
-  const actual = achievementsList.reduce((accumulator, current: Achievement) => {
-    accumulator[current.id] = current.checkComplete(tasksStatus);
-    return accumulator;
-  }, {});
+  // TODO: Remove mockAchievementsList and use actual
+  const actual = challenge.achievements.reduce((accumulator, current: Achievement) => {
+    accumulator.set(current._id, current.checkComplete(challenge.tasksStatus));
 
+    return accumulator;
+  }, new Map());
   console.log(actual);
+
+  io.emit('update achievements status', { achievements: mockAchievementsList });
 
   return mockAchievementsList;
 };

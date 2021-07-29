@@ -1,7 +1,7 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "target": "es2020",
+    "target": "es6",
     "module": "commonjs",
     "rootDir": ".",
     "outDir": "dist",
@@ -10,6 +10,7 @@
     "moduleResolution": "node",
     "baseUrl": "./",
     "pretty": true,
+    "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "paths": {

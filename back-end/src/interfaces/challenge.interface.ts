@@ -4,11 +4,11 @@ import { Achievement } from './achievement.interface';
 import { Status } from './status.interface';
 
 export interface Challenge {
-  id: string;
+  _id: string;
   state: ChallengeState;
   startDate: Date;
-  tasksOrder: Record<string, Task>;
-  tasksStatus: Record<string, Status>;
+  tasksOrder: Map<string, Task>;
+  tasksStatus: Map<string, Status>;
   achievements: Achievement[];
-  achievementsStatus: Record<string, Status>;
+  achievementsStatus: Map<string, Status>;
 }
