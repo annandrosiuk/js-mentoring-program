@@ -1,22 +1,29 @@
-import { Challenge, ArchiveItem, TaskForToday, Achievement } from '../interfaces';
-import { getCurrentChallange } from '../utils';
+import ChallengeModel, { ChallengeDocument } from '../models/challenge.model';
+import { ArchiveItem, Task } from '../interfaces';
+import { StatusState } from '../enums';
 
-export const getTaskArchive = (challengeId: string, challengesList: Challenge[]): ArchiveItem[] => {
-  const currentChallenge: Challenge = getCurrentChallange(challengesList, challengeId);
-  if (!currentChallenge) {
+export const getTaskArchive = async (challengeId: string): Promise<ArchiveItem[] | null> => {
+  const challenge: ChallengeDocument = await ChallengeModel.findById(challengeId);
+  if (!challenge) {
     return null;
   }
 
-  const actualAchievements: Achievement[] = currentChallenge.achievements;
-  return actualAchievements.flatMap((actualAchievement) =>
-    getArchiveTasks(actualAchievement.tasks)
-  );
-};
+  const pastTasks: ArchiveItem[] = [];
 
-const getArchiveTasks = (taskForToday: TaskForToday[]): ArchiveItem[] => {
-  return taskForToday.map(({ id, description, status }: ArchiveItem) => ({
-    id,
-    description,
-    status,
-  }));
+  for (const key in challenge.tasksStatus) {
+    const value = challenge.tasksStatus.get(key);
+
+    if (value && value.state !== StatusState.PENDING) {
+      const task: Task = challenge.tasksOrder.get(key);
+      const pastTask: ArchiveItem = {
+        _id: task._id,
+        description: task.description,
+        status: value,
+      };
+
+      pastTasks.push(pastTask);
+    }
+  }
+
+  return pastTasks;
 };

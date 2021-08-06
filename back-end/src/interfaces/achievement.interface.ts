@@ -2,11 +2,11 @@ import { Status, ArchiveItem } from '../interfaces';
 import { TaskForToday } from './task.interface';
 
 export interface Achievement {
-  id: string;
+  _id?: string;
   description: string;
-  icon: string;
+  image: string;
   tasks?: TaskForToday[];
-  checkComplete?: (taskStatus: Record<string, Status>) => Status;
+  checkComplete?: (taskStatus: Map<string, Status>) => Status;
 }
 
 export interface ActualAchievement extends ArchiveItem {
